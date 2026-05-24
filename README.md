@@ -97,3 +97,4 @@ Download the newest installer and run it over the old version. Your settings and
 ---
 
 For more support or to learn about the project, use the GitHub link provided above. The page has documentation and contact options.
+# PR test 1
