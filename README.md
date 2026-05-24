@@ -97,4 +97,27 @@ Download the newest installer and run it over the old version. Your settings and
 ---
 
 For more support or to learn about the project, use the GitHub link provided above. The page has documentation and contact options.
+
+## Codemagic Google Play setup
+
+To publish Android builds through Codemagic, the repo now expects a `key.properties` file at `android/key.properties` during the build. Do not commit the real file or the keystore.
+
+Use this shape for the file:
+
+```properties
+storePassword=XXXXXXXX
+keyPassword=XXXXXXXX
+keyAlias=upload
+storeFile=upload-keystore.jks
+```
+
+The repository includes a template at [`android/key.properties.example`](/home/raafat/flutter_calculator/android/key.properties.example).
+
+Codemagic must also provide:
+
+- `key.properties` generated or written during the workflow
+- the upload keystore file referenced by `storeFile`
+- the keystore password, key password, and alias
+
+The Android release build is wired to use that file automatically when it exists.
 # PR test 1
