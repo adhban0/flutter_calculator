@@ -74,8 +74,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
 
   String _display = '0';
   String _expression = '';
-  double? _firstOperand;
-  String? _operator;
   bool _shouldResetDisplay = false;
   bool _isFunctionInputPending = false;
   final List<String> _history = <String>[];
@@ -288,8 +286,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
     setState(() {
       _display = '0';
       _expression = '';
-      _firstOperand = null;
-      _operator = null;
       _shouldResetDisplay = false;
       _isFunctionInputPending = false;
     });
@@ -394,8 +390,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
 
       _expression = expr;
       _shouldResetDisplay = true;
-      _firstOperand = null;
-      _operator = null;
       _display = '0';
     });
   }
@@ -426,8 +420,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
       _expression = '$expr=';
       _display = _formatNumber(result);
       _addHistoryEntry('$expr=${_formatNumber(result)}');
-      _firstOperand = null;
-      _operator = null;
       _shouldResetDisplay = true;
     });
   }
@@ -476,8 +468,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
       }
 
       _expression = expr;
-      _firstOperand = null;
-      _operator = null;
     });
   }
 
@@ -517,8 +507,6 @@ class _CalculatorPageState extends State<CalculatorPage> {
   void _applyErrorState() {
       _display = 'Error';
       _expression = '';
-      _firstOperand = null;
-      _operator = null;
       _shouldResetDisplay = true;
       _isFunctionInputPending = false;
   }
@@ -823,8 +811,12 @@ class _CalculatorPageState extends State<CalculatorPage> {
                       onPressed: _history.isEmpty
                           ? null
                           : () async {
+                              final navigator = Navigator.of(context);
                               await _clearHistory();
-                              Navigator.of(context).pop();
+                              if (!mounted) {
+                                return;
+                              }
+                              navigator.pop();
                             },
                       child: const Text('Clear'),
                     ),
@@ -844,7 +836,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
                     height: 260,
                     child: ListView.separated(
                       itemCount: _history.length,
-                      separatorBuilder: (_, __) => const Divider(height: 16),
+                      separatorBuilder: (context, _) => Divider(
+                        height: 16,
+                        color: Theme.of(context).dividerColor,
+                      ),
                       itemBuilder: (context, index) {
                         return Text(
                           _history[index],
